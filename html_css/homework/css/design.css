@@ -1,0 +1,69 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f6f7; /*The background-color property should be set on the whole page instead of the text only. That means that the whole page should be gray, while the footer should be white. */
+                               /*The background-color is a little off. You should use the eyedropper tool in PSDetch to get the precise color.*/ /*done*/
+    margin: 0;
+    padding: 0;
+}
+
+.menu{
+
+    text-align: center;
+    padding-top: 10px;
+    background-color: white;
+    height: 50px;
+    padding-bottom: 20px; /*The nav-panel should have a padding (or a margin) so that the picture would be lower.*/
+
+}
+.li{
+    display: inline-block; /*Never ever use selector styles. You should give every element that you want to assign a style to a class. It’s by far the best way to stylize an element*/
+    margin-left: 50px;    /*created a class*/
+	margin-right: 50px;
+	color:blue
+}
+.link{
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+	color:#2DD5FF
+}
+
+
+.img{
+	width: 100%
+}
+
+.text{
+	text-align:center;
+	padding-top: 30px;
+}
+
+.footer{
+	text-align:right;
+    background-color: white;
+	height: 80px;
+	margin-top: 20px
+}
+.span{
+    float: right;
+    margin: 30px 50px 0 0;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #373737;
+    font-family: "Roboto";
+    font-weight: 900;
+    opacity: 0.7;
+}
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px
+}
