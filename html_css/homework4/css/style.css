@@ -1,0 +1,274 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    flex-direction: row;
+    display: flex;
+    background: hsla(0, 0%, 0%, 0.6);
+    width: 100%;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+}
+
+.txt{
+    margin: 0;
+}
+
+.social {
+    display: flex;
+    justify-content: space-around;
+    width: 350px;
+}
+
+.journey {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+}
+
+.journey:hover {
+    color: limegreen;
+}
+
+
+.txt2 {
+    color: white;
+}
+
+
+
+.navigation--item {
+    display: inline-block;
+}
+
+.icon {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0px 5px;
+
+}
+
+.icon:hover {
+    /*icon changing color*/
+    color: #3cb878;
+}
+
+
+.link {
+    text-decoration: none;
+    color: limegreen;
+
+}
+
+.nav-txt {
+    float: right;
+}
+
+.signup {
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 5px;
+
+}
+
+.square {
+    background-color: limegreen;
+    width: 15px;
+    height: 15px;
+    float: left;
+    align-self: center;
+}
+
+
+.col1 {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.main--header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 45px;
+    width: 75%;
+}
+
+.link2 {
+    align-self: center;
+    text-decoration: none;
+    color: limegreen;
+}
+
+.col2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 285px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.img2 {
+    width: 30px;
+    height: 20px;
+    object-fit: contain;
+    align-self: center;
+}
+
+.link3 {
+    color: white;
+    text-decoration: none;
+}
+
+.content1 {
+    background-color: #305db8;
+    display: flex;
+    border-radius: 5px;
+    height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+ 
+.content1:hover {
+    background-color: #264b96;
+}
+
+.content2 {
+    height: 45px;
+    float: right;
+    display: flex;
+    border-radius: 5px;
+    background-color: #df4a32;
+    padding-left: 20px;
+    padding-right: 30px;
+    justify-content: space-between;
+}
+
+.content2:hover {
+    background-color: #c3412c;
+}
+
+.link4 {
+    float: right;
+    text-decoration: none;
+    color: white;
+    align-self: center;
+}
+
+.line {
+    width: 70%;
+    text-align: center;
+
+    border-bottom: 1px solid gray;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    margin-left: 55px;
+    margin-top: 20px;
+}
+
+.txt3 {
+    background: #fff;
+    padding: 0 10px;
+
+}
+
+.centered {
+    align-self: center;
+}
+
+.col3 {
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.input {
+    margin-left: 55px;
+    width: 285px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border: 1px solid rgba(136, 133, 133, 0.2);
+    padding: 13px 15px;
+    border-radius: 3px;
+    font-family: 'Roboto';
+    box-shadow: none;
+    transition: all .4s ease;
+    font-size: 16px;
+    line-height: 21px;
+    color: #8f8e8e;
+    opacity: 0.9;
+    margin: auto;
+    /*centered forms*/
+    margin-bottom: 20px;
+}
+
+.input:hover {
+    transform: scale(1.08)
+        /*The form inputs don’t move when you click on them */
+
+}
+
+.input:focus {
+    transform: scale(1.01);
+    outline: none;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    font-size: 17px;
+    line-height: 21px;
+    color: #434343;
+    font-family: "Roboto";
+}
+
+.col4 {
+    margin-left: 55px;
+
+
+}
+
+.button {
+    margin-top: 20px;
+    transition: all .3s;
+}
+
+.btn {
+    width: 285px;
+    height: 50px;
+    color: white;
+    background-color: rgb(31, 196, 100);
+    border: 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.button:hover {
+    transform: scale(1.05) translateX(3px)
+}
+
+.link5 {
+    text-decoration: none;
+    color: limegreen;
+}
