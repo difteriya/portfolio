@@ -18,11 +18,11 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+
+}
+
+a {
+  text-decoration: none;
 }
 
 ul {
@@ -32,6 +32,15 @@ ul {
 p {
   line-height: normal;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
 
 .basic-section {
   display: flex;
@@ -433,16 +442,7 @@ p {
   display: grid;
   flex-wrap: wrap;
   width: 1145px;
-  grid-template-rows: repeat(2, 206px);
-  grid-template-columns: repeat(4, 284px);
-}
-
-.category-img-plate-load-more {
-  display: grid;
-  flex-wrap: wrap;
-  width: 1145px;
-  height: 1250px;
-  grid-template-rows: repeat(6, 206px);
+  grid-template-rows: repeat(3, 206px);
   grid-template-columns: repeat(4, 284px);
 }
 
@@ -452,6 +452,8 @@ p {
   align-items: center;
   height: 206px;
   width: 284px;
+  transition: ease .5s;
+
 }
 
 .hover-plate:hover {
@@ -463,6 +465,8 @@ p {
   width: 100px;
   display: flex;
   justify-content: space-between;
+  transition: ease .5s;
+
 }
 
 .hover-plate-icons {
@@ -476,6 +480,8 @@ p {
   border: 1px solid #18cfab;
   border-radius: 50%;
   cursor: pointer;
+  transition: ease .5s;
+
 }
 
 .hover-plate-icons:hover {
@@ -487,7 +493,8 @@ p {
   font-size: 24px;
   color: #18cfab;
   text-transform: uppercase;
-  padding-top: 35px;
+  margin-top: 35px;
+  cursor: pointer;
 }
 
 .hover-plate-category {
@@ -502,14 +509,14 @@ p {
 
 .category-img-plate-item:hover img {
   display: none;
+  transition: ease .5s;
+
 }
 
 .category-img-plate-item:hover .hover-plate {
   display: flex;
-}
+  transition: ease .8s;
 
-.is-on {
-  display: inline-block;
 }
 
 .load-more-btn {
@@ -561,6 +568,7 @@ p {
   text-align: center;
   line-height: 25px;
   color: #ffffff;
+  transition: ease .5s;
 }
 
 .month {
@@ -630,6 +638,8 @@ p {
   font-size: 18px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.6);
+  transition: ease .5s;
+
 }
 
 .news-explain:before {

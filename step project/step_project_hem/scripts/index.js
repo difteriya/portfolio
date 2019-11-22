@@ -19,30 +19,8 @@ $(function() {
       effects: "fade translateZ(100px) rotateZ(80deg) rotateY(80deg) scale(0.1)"
     }
   });
-
-  let mixShow = $(".mix");
-  let mix = $(".mix").length;
-  let img_more = $(".load-more");
-  let img_less = $(".show-less");
-
-  $(img_less).hide();
-  $(img_more).hide();
-
-  if (mix > 12) {
-    $(img_more).show();
-    mixShow.slice(12).hide();
-  }
-  $(img_more).click(function() {
-    mixShow.show();
-    $(img_less).show();
-    $(img_more).hide();
-  });
-  $(img_less).click(function() {
-    mixShow.slice(12).hide();
-    $(img_more).show();
-    $(img_less).hide();
-  });
 });
+
 
 const slider = () => {
   const leftBtn = document.querySelector(".left-slide");
@@ -113,57 +91,3 @@ const slider = () => {
 };
 
 slider();
-
-function moreLess(initiallyVisibleCharacters) {
-  var visibleCharacters = initiallyVisibleCharacters;
-  var paragraph = $(".tabs-content-item-text");
-
-  paragraph.each(function() {
-    var text = $(this).text();
-    var wholeText =
-      text.slice(0, visibleCharacters) +
-      "<span>...   </span><a href='#' class='more'>Read More</a>" +
-      "<span style='display:none'>" +
-      text.slice(visibleCharacters, text.length) +
-      "<a href='#' class='less'> Show Less</a></span>";
-
-    if (text.length < visibleCharacters) {
-      return;
-    } else {
-      $(this).html(wholeText);
-    }
-  });
-
-  // function loadMore(visibleImages) {
-  //     let imgCount = visibleImages;
-  //     let images = $(".category-img-plate-item");
-
-  //     images.each(function () {
-  //         let img = $(this).img();
-  //         let showUs =
-  //     })
-
-  // }
-  $(".more").click(function(e) {
-    e.preventDefault();
-    $(this)
-      .hide()
-      .prev()
-      .hide();
-    $(this)
-      .next()
-      .show();
-  });
-  $(".less").click(function(e) {
-    e.preventDefault();
-    $(this)
-      .parent()
-      .hide()
-      .prev()
-      .show()
-      .prev()
-      .show();
-  });
-}
-
-moreLess(300);
