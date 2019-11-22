@@ -8,14 +8,87 @@ $('.title-tabs-item').on('click', function () {
     $('.tabs-content-item[data-service ='+ $(this).data('service') +']').css('display', 'grid');
 });
 
-$ (function () {
-    $("#mix-container").mixItUp({
-        animation: {
-            effects: 'fade-in-out translateZ(100px) rotateX(-180deg) scale(0.2)',
-        }
-    });
-});
+categoryPlate = () => {
+    const fullPlate = document.querySelector('.category-img-plate');
 
+    const plates = document.querySelectorAll('.category-plate-item');
+
+    const imges = document.querySelectorAll('.category-img-plate-item');
+
+    const load = document.querySelector('.load-more-btn');
+
+
+    plates.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            const setCategory = (arr, countStop, randomMath) => {
+                const randomiz = () => {
+                    return Math.floor(Math.random()* (randomMath) );
+                };
+
+                const clearActive = document.querySelector('.category-plate-item.active-category');
+                clearActive.classList.remove('active-category');
+
+                elem.classList.add('active-category');
+
+                let i = 0;
+
+                imges.forEach((elem) => {
+                    elem.style.display = 'none';
+                    elem.dataset.showed = '';
+                });
+
+                while (i < countStop) {
+                    let numb = randomiz();
+                    console.log(`i is${i}`);
+                    console.log(numb);
+                    if (arr[numb] && imges[numb].dataset.showed !== '1') {
+                        arr[numb].dataset.showed = '1';
+                        arr[numb].style.display = 'inline-block';
+                        i++;
+                    }
+                }
+            };
+            const imgArr = document.querySelectorAll(`.category-img-plate-item[data-category="${elem.dataset.category}"]`);
+
+            load.style.display = 'inline-block';
+
+            fullPlate.classList.remove('category-img-plate-load-more');
+
+            if(elem.dataset.category === 'All') {
+                setCategory(imges, 12, 36);
+            }
+            if(elem.dataset.category !== 'All'){
+                setCategory(imgArr, imgArr.length, imgArr.length);
+            }
+        });
+    }
+    );
+
+    load.addEventListener('click', () => {
+
+
+        fullPlate.classList.add('category-img-plate-load-more');
+
+        const randomiz = () => {
+            return Math.floor(Math.random()* (36) );
+        };
+
+        let i = 0;
+
+        while (i < 12) {
+            let numb = randomiz();
+            console.log(numb);
+            if (imges[numb] && imges[numb].dataset.showed !== '1') {
+                imges[numb].dataset.showed = '1';
+                imges[numb].style.display = 'inline-block';
+                i++;
+            }
+        }
+
+        load.style.display = 'none';
+    })
+
+};
 
 const slider = () => {
     const leftBtn = document.querySelector('.left-slide');
@@ -87,35 +160,6 @@ const slider = () => {
 
 };
 
+categoryPlate();
 
 slider();
-
-
-function moreLess(initiallyVisibleCharacters) {
-	var visibleCharacters = initiallyVisibleCharacters;
-	var paragraph = $(".tabs-content-item-text")
-	
-
-	paragraph.each(function() {
-		var text = $(this).text();
-        var wholeText = text.slice(0, visibleCharacters) + "<span>...   </span><a href='#' class='more'>Read More</a>" + "<span style='display:none'>" + 
-                        text.slice(visibleCharacters, text.length) + "<a href='#' class='less'> Show Less</a></span>"
-		
-		if (text.length < visibleCharacters) {
-			return
-		} else {
-			$(this).html(wholeText)
-		}
-	});
-	$(".more").click(function(e) {
-		e.preventDefault();
-		$(this).hide().prev().hide();
-		$(this).next().show();
-	});
-	$(".less").click(function(e) {
-		e.preventDefault();
-		$(this).parent().hide().prev().show().prev().show();
-	});
-};
-
-moreLess(300);
