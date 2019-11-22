@@ -1,165 +1,169 @@
 $(".tabs-content-item").hide();
-$(".tabs-content-item").eq(0).css('display', 'grid');
+$(".tabs-content-item")
+  .eq(0)
+  .css("display", "grid");
 
-$('.title-tabs-item').on('click', function () {
-    $('.title-tabs-item.active').removeClass('active');
-    $(this).addClass('active');
-    $('.tabs-content-item').hide();
-    $('.tabs-content-item[data-service ='+ $(this).data('service') +']').css('display', 'grid');
+$(".title-tabs-item").on("click", function() {
+  $(".title-tabs-item.active").removeClass("active");
+  $(this).addClass("active");
+  $(".tabs-content-item").hide();
+  $(".tabs-content-item[data-service =" + $(this).data("service") + "]").css(
+    "display",
+    "grid"
+  );
 });
 
-categoryPlate = () => {
-    const fullPlate = document.querySelector('.category-img-plate');
-
-    const plates = document.querySelectorAll('.category-plate-item');
-
-    const imges = document.querySelectorAll('.category-img-plate-item');
-
-    const load = document.querySelector('.load-more-btn');
-
-
-    plates.forEach((elem) => {
-        elem.addEventListener('click', () => {
-            const setCategory = (arr, countStop, randomMath) => {
-                const randomiz = () => {
-                    return Math.floor(Math.random()* (randomMath) );
-                };
-
-                const clearActive = document.querySelector('.category-plate-item.active-category');
-                clearActive.classList.remove('active-category');
-
-                elem.classList.add('active-category');
-
-                let i = 0;
-
-                imges.forEach((elem) => {
-                    elem.style.display = 'none';
-                    elem.dataset.showed = '';
-                });
-
-                while (i < countStop) {
-                    let numb = randomiz();
-                    console.log(`i is${i}`);
-                    console.log(numb);
-                    if (arr[numb] && imges[numb].dataset.showed !== '1') {
-                        arr[numb].dataset.showed = '1';
-                        arr[numb].style.display = 'inline-block';
-                        i++;
-                    }
-                }
-            };
-            const imgArr = document.querySelectorAll(`.category-img-plate-item[data-category="${elem.dataset.category}"]`);
-
-            load.style.display = 'inline-block';
-
-            fullPlate.classList.remove('category-img-plate-load-more');
-
-            if(elem.dataset.category === 'All') {
-                setCategory(imges, 12, 36);
-            }
-            if(elem.dataset.category !== 'All'){
-                setCategory(imgArr, imgArr.length, imgArr.length);
-            }
-        });
+$(function() {
+  $("#mix-container").mixItUp({
+    animation: {
+      effects: "fade translateZ(100px) rotateZ(80deg) rotateY(80deg) scale(0.1)"
     }
-    );
+  });
 
-    load.addEventListener('click', () => {
+  let mixShow = $(".mix");
+  let mix = $(".mix").length;
+  let img_more = $(".load-more");
+  let img_less = $(".show-less");
 
+  $(img_less).hide();
+  $(img_more).hide();
 
-        fullPlate.classList.add('category-img-plate-load-more');
-
-        const randomiz = () => {
-            return Math.floor(Math.random()* (36) );
-        };
-
-        let i = 0;
-
-        while (i < 12) {
-            let numb = randomiz();
-            console.log(numb);
-            if (imges[numb] && imges[numb].dataset.showed !== '1') {
-                imges[numb].dataset.showed = '1';
-                imges[numb].style.display = 'inline-block';
-                i++;
-            }
-        }
-
-        load.style.display = 'none';
-    })
-
-};
+  if (mix > 12) {
+    $(img_more).show();
+    mixShow.slice(12).hide();
+  }
+  $(img_more).click(function() {
+    mixShow.show();
+    $(img_less).show();
+    $(img_more).hide();
+  });
+  $(img_less).click(function() {
+    mixShow.slice(12).hide();
+    $(img_more).show();
+    $(img_less).hide();
+  });
+});
 
 const slider = () => {
-    const leftBtn = document.querySelector('.left-slide');
-    const rightBtn = document.querySelector('.right-slide');
-    const slides = document.querySelectorAll('.reviewer-img');
-    const slidesArr = Array.prototype.slice.call(slides);
-    const reviews = document.querySelectorAll('.review-text');
-    const bigReview = document.querySelectorAll('.big-reviewer');
+  const leftBtn = document.querySelector(".left-slide");
+  const rightBtn = document.querySelector(".right-slide");
+  const slides = document.querySelectorAll(".reviewer-img");
+  const slidesArr = Array.prototype.slice.call(slides);
+  const reviews = document.querySelectorAll(".review-text");
+  const bigReview = document.querySelectorAll(".big-reviewer");
 
-    let countIndex = slides.length - 1;
-    let countSlide = 2;
+  let countIndex = slides.length - 1;
+  let countSlide = 2;
 
-    const clearActive = () => {
-        const clearActiveReviewer = document.querySelector('.active-reviewer');
-        const clearActiveReview = document.querySelector('.active-review');
-        const clearActiveBigReview = document.querySelector('.active-big-review');
+  const clearActive = () => {
+    const clearActiveReviewer = document.querySelector(".active-reviewer");
+    const clearActiveReview = document.querySelector(".active-review");
+    const clearActiveBigReview = document.querySelector(".active-big-review");
 
-        clearActiveReviewer.classList.remove('active-reviewer');
-        clearActiveReview.classList.remove('active-review');
-        clearActiveBigReview.classList.remove('active-big-review')
-    };
+    clearActiveReviewer.classList.remove("active-reviewer");
+    clearActiveReview.classList.remove("active-review");
+    clearActiveBigReview.classList.remove("active-big-review");
+  };
 
-    const setActive =(index) => {
-        slides[index].classList.add('active-reviewer');
-        reviews.forEach((elem) => {
-            if(elem.dataset.review === slides[index].dataset.review){
-                elem.classList.add('active-review');
-            }
-        });
-        bigReview.forEach((elem) => {
-                if (elem.dataset.review === slides[index].dataset.review) {
-                    elem.classList.add('active-big-review');
-                }
-            }
-        )
-    };
-
-    slides.forEach((elem) => {
-       elem.addEventListener('click', () => {
-           clearActive();
-
-           countSlide = slidesArr.indexOf(elem);
-
-           setActive(countSlide);
-       })
+  const setActive = index => {
+    slides[index].classList.add("active-reviewer");
+    reviews.forEach(elem => {
+      if (elem.dataset.review === slides[index].dataset.review) {
+        elem.classList.add("active-review");
+      }
     });
-
-    leftBtn.addEventListener('click', () => {
-        clearActive();
-
-        if(countSlide === 0){
-            countSlide = countIndex;
-        }else{
-            countSlide -= 1;
-        }
-        setActive(countSlide);
+    bigReview.forEach(elem => {
+      if (elem.dataset.review === slides[index].dataset.review) {
+        elem.classList.add("active-big-review");
+      }
     });
+  };
 
-    rightBtn.addEventListener('click', () => {
-        clearActive();
+  slides.forEach(elem => {
+    elem.addEventListener("click", () => {
+      clearActive();
 
-        if(countSlide === countIndex){
-            countSlide = 0;
-        }else{
-            countSlide += 1;
-        }
-        setActive(countSlide);
-    })
+      countSlide = slidesArr.indexOf(elem);
 
+      setActive(countSlide);
+    });
+  });
+
+  leftBtn.addEventListener("click", () => {
+    clearActive();
+
+    if (countSlide === 0) {
+      countSlide = countIndex;
+    } else {
+      countSlide -= 1;
+    }
+    setActive(countSlide);
+  });
+
+  rightBtn.addEventListener("click", () => {
+    clearActive();
+
+    if (countSlide === countIndex) {
+      countSlide = 0;
+    } else {
+      countSlide += 1;
+    }
+    setActive(countSlide);
+  });
 };
 
-categoryPlate();
-
 slider();
+
+function moreLess(initiallyVisibleCharacters) {
+  var visibleCharacters = initiallyVisibleCharacters;
+  var paragraph = $(".tabs-content-item-text");
+
+  paragraph.each(function() {
+    var text = $(this).text();
+    var wholeText =
+      text.slice(0, visibleCharacters) +
+      "<span>...   </span><a href='#' class='more'>Read More</a>" +
+      "<span style='display:none'>" +
+      text.slice(visibleCharacters, text.length) +
+      "<a href='#' class='less'> Show Less</a></span>";
+
+    if (text.length < visibleCharacters) {
+      return;
+    } else {
+      $(this).html(wholeText);
+    }
+  });
+
+  // function loadMore(visibleImages) {
+  //     let imgCount = visibleImages;
+  //     let images = $(".category-img-plate-item");
+
+  //     images.each(function () {
+  //         let img = $(this).img();
+  //         let showUs =
+  //     })
+
+  // }
+  $(".more").click(function(e) {
+    e.preventDefault();
+    $(this)
+      .hide()
+      .prev()
+      .hide();
+    $(this)
+      .next()
+      .show();
+  });
+  $(".less").click(function(e) {
+    e.preventDefault();
+    $(this)
+      .parent()
+      .hide()
+      .prev()
+      .show()
+      .prev()
+      .show();
+  });
+}
+
+moreLess(300);
