@@ -1,0 +1,543 @@
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap)
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap)
+
+$fontMontserrat: 'Montserrat', sans-serif
+$fontLato: 'Lato', sans-serif
+$mainTextCol: #3f4043
+$secondaryTextCol: #d3d4d4
+$secondaryBgCol: #acd8ad
+
+@mixin itemsPlacement($direction, $justify, $align) 
+      display: flex
+      flex-direction: $direction
+      justify-content: $justify
+      align-items: $align
+
+      
+body
+      padding: 0
+      margin: 0
+
+*
+      box-sizing: border-box
+      
+.header
+      width: 100%
+
+.header-row
+      background-color: $mainTextCol
+      height: 90px
+      
+      @include itemsPlacement(row, center, center)
+      .header-container
+            width: 1200px
+            position: relative
+            @include itemsPlacement(row, space-between, center)
+            .header-nav
+                  .header-nav-link
+                        text-decoration: none
+                        text-transform: uppercase
+                        cursor: pointer
+                        color: $secondaryTextCol
+                        font-family: $fontMontserrat
+                        font-size: 14px
+                        &:not(:nth-of-type(5))
+                              margin-right: 20px
+
+.header-logo
+      width: 90px
+      height: 90px
+      overflow: hidden
+      cursor: pointer
+      @include itemsPlacement(row, center, center)
+      img  
+            width: 100%
+            object-fit: contain
+
+.header-heading-sm,
+.header-burger
+      display: none
+
+.header-main
+      height: 640px
+      background-image: url('../img/header-fon.png')
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: top
+      padding-left: 35px
+      padding-top: 55px
+      @include itemsPlacement(column, flex-start, flex-start)
+      
+      .header-main-title
+            font-family: $fontLato
+            font-size: 62px
+            font-weight: 700
+            margin-bottom: 40px
+            line-height: 1.2em
+            color: white
+            @include itemsPlacement(column, center, flex-start)
+      .header-main-link
+            font-size: 38px
+            font-family: $fontLato
+            font-weight: 700
+            a
+                  text-decoration: none
+                  color: #a6d6e0
+            
+
+
+@media screen and ( max-width: 980px ) and ( min-width: 641px)
+      .header-main
+            height: 524px
+            background-image: url('../img/header-fon-md.png')
+            .header-main-title
+                  font-size: 54px
+            .header-main-link
+                  font-size: 34px
+                  
+
+@media screen and ( max-width: 640px ) and ( min-width: 321px)
+      .header-main
+            height: 346px
+            background-image: url('../img/header-fon-sm.png')
+            padding-left: 30px
+            padding-top: 35px
+            .header-main-title
+                  font-size: 30px
+                  margin-bottom: 30px
+            .header-main-link
+                  font-size: 24px
+
+@media screen and ( max-width: 320px )
+      .header-main
+            height: 172px
+            background-image: url('../img/header-fon-xs.png')
+            padding-left: 20px
+            padding-top: 17px
+            .header-main-title
+                  font-size: 16px
+                  margin-bottom: 15px
+            .header-main-link
+                  font-size: 14px
+      
+
+      
+
+      
+@media screen and ( max-width: 1200px ) and (min-width: 641px)
+      .header-nav
+            transform: translateX(20px)
+      
+
+            
+
+@media ( max-width: 640px )
+      .header-row
+            height: 70px
+      .header
+            width: 100%
+      .header-row
+            padding: 0
+            width: 100%
+      .header-logo
+            display: none
+            img
+                  display: none
+      .header-heading-sm,
+      .header-burger   
+            display: block  
+
+      .header-burger
+            position: relative
+            height: 70px
+            width: 70px
+            background-color: #202529
+            cursor: pointer
+            transition: all .3s ease
+            @include itemsPlacement(row, center, center)
+            
+            span 
+                  height: 4px
+                  width: 50%
+                  background-color: white
+                  transition: all .3s ease
+                  &::after, &::before
+                        position: absolute
+                        content: ''
+                        height: 4px
+                        width: 50%
+                        background-color: white
+                        transition: all .3s ease
+                  &::after
+                        top: 35%
+                        
+                  &::before
+                        bottom: 35%
+                        
+                        
+            &.active-burger
+                  span 
+                        background-color: #202529 
+                        &::after
+                              top: 50%
+                              transform: rotate(-45deg)
+                        &::before
+                              top: 50%
+                              transform: rotate(45deg)
+                  
+            
+      .header-heading-sm
+            font-family: $fontMontserrat
+            font-size: 24px
+            color: white
+            transform: translateX(50px)
+      .header-nav
+            position: absolute
+            top: 100%
+            right: 0
+            background-color: #fff
+            width: 200px 
+            transition: all .3s ease
+            @include itemsPlacement(column, center, flex-start)
+            z-index: -2
+            transform: translateY(-100%)
+            &.active-nav
+                  transform: translateY(0)
+                  z-index: 10
+
+
+            .header-nav-link
+                  display: block
+                  width: 100%
+                  margin: 0
+                  padding: 10px
+                  padding-left: 20px
+                  font-family: $fontLato !important
+                  font-size: 10px !important
+                  color: #444444 !important
+                  border-bottom: 1px solid #e9e9e9
+                  background-color: #fafafa
+                  text-transform: capitalize !important
+                  &:hover
+                        background-color: #f5f5f5    
+
+
+      
+            
+@media  ( max-width: 320px )
+      .header-row
+            height: 40px
+      
+      .header-burger
+            height: 40px
+            width: 40px
+            span
+                  height: 2px
+                  width: 40%
+                  &::after, &::before
+                        height: 2px
+                        width: 40%
+      .header-heading-sm
+            font-size: 14px
+            transform: translateX(30px)
+                  
+
+
+.product-gallery
+      width: 100%
+      margin-top: 7px
+      display: flex
+      .product-gallery-row
+            height: 500px
+            width: (100% / 3)
+            .product-category
+                  height: 100%
+                  width: 100%
+                  @include itemsPlacement(row, center, center)
+                  background-repeat: no-repeat
+                  background-size: cover
+                  background-position: center
+                  color: white
+                  font-family: $fontLato
+                  font-weight: 700
+                  font-size: 43px
+                  text-transform: capitalize
+
+      
+            
+@media screen and ( max-width: 1200px ) and ( min-width: 981px )
+      .product-gallery-row
+            height: 325px !important
+            .product-category
+                  font-size: 38px !important
+
+@media screen and ( max-width: 980px ) and ( min-width: 641px )
+      .product-gallery-row
+             height: 275px !important
+             .product-category
+                   font-size: 34px !important
+      
+
+@media screen and ( max-width: 640px ) 
+      .product-gallery
+            flex-direction: column
+            .product-gallery-row
+                  width: 100%
+                  margin-bottom: 3px
+                  position: relative
+                  height: 150px
+                  display: flex
+                  justify-content: flex-start
+                  .product-category
+                        width: 70%
+                        background-size: fill
+                        background-position: center
+                        overflow: hidden
+                        font-size: 34px !important
+                  &::after
+                        font-family: FontAwesome
+                        content: '\f105'
+                        color: white
+                        font-size: 50px
+                        width: 30%
+                        height: 150px
+                        background-color: #acd8ad
+                        position: absolute
+                        left: 70%
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        cursor: pointer
+            
+@media screen and ( max-width: 320px )
+      .product-gallery-row
+            height: 100px !important
+            .product-category
+                  font-size: 20px !important
+            &::after
+                  height: 100px !important
+                  font-size: 30px !important
+
+
+.menu
+      width: 100%
+      margin-top: 25px
+      color: $mainTextCol
+      font-family: $fontLato
+      @include itemsPlacement(column, center, center)
+
+      .menu-header
+            @include itemsPlacement(row, space-between, center)
+            margin-bottom: 15px
+            height: 80px
+            width: 100%
+            padding-left: 15px
+            padding-right: 15px
+
+            .menu-title
+                  font-size: 40px
+                  font-family: $fontLato
+                  font-weight: 400
+                  text-transform: uppercase
+                  @include itemsPlacement(column, space-between, flex-start)
+                  
+                  span
+                        font-size: 20px
+                        color: #cbccce
+                        text-transform: none
+            
+            .menu-icon
+                  height: 100%
+                  width: 100px
+                  overflow: hidden
+
+                  img
+                        height: 100%
+                        object-fit: contain
+
+.menu-content
+      @include itemsPlacement(row, center, center)
+      width: 100%
+
+      .menu-bar
+            @include itemsPlacement(column, center, center)
+            width: 50%
+
+            .menu-bar-title
+                  height: 60px
+                  width: 100%
+                  @include itemsPlacement(row, flex-start, center)
+                  padding-left: 10px
+                  font-size: 40px
+                  color: #acd8ad
+                  background-color: $mainTextCol
+                  &#menu-bar-row-2
+                        color: white !important
+                        background-color: #acd8ad !important
+
+.menu-bar-row
+      @include itemsPlacement(column, center, center)
+      width: 100%
+      padding-left: 10px 
+      padding-right: 10px
+
+      .menu-bar-row-title
+            height: 40px
+            width: 100%
+            margin-bottom: 25px
+            margin-top: 10px
+            @include itemsPlacement(row, space-between, center)
+            
+            span
+                  font-size: 30px 
+                  display: block
+            img
+                  cursor: pointer
+                  height: 40px
+                  width: 40px
+                  display: block
+                  object-fit: contain
+      .menu-bar-row-content
+            @include itemsPlacement(column, center, center)
+
+            .menu-bar-row-item
+                  @include itemsPlacement(column, center, center)
+                  width: 100%
+                  margin-bottom: 15px
+
+                  .menu-bar-item-title
+                        @include itemsPlacement(row, space-between, center)
+                        width: 100%
+
+                        .menu-bar-item-name
+                              font-size: 25px
+                              @include itemsPlacement(row, flex-start, center)
+                              i
+                                    margin-right: 5px
+
+                        .menu-bar-item-price
+                              font-size: 25px
+                              font-weight: 700
+
+                  .menu-bar-item-desc
+                        width: 100%
+                        margin-top: 10px
+                        font-size: 15px
+
+
+
+@media screen and ( max-width: 980px ) and (min-width: 321px)
+      .menu-title
+            font-size: 30px !important
+      .menu-bar-title
+            font-size: 30px !important
+      .menu-bar-row-title
+            span
+                  font-size: 20px !important
+      .menu-bar-item-name
+            font-size: 18px !important
+      .menu-bar-item-price
+            .fa-usd
+                  font-size: 17px !important
+            font-size: 18px !important
+      
+      .menu-bar-item-desc
+            font-size: 12px !important
+
+@media screen and ( max-width: 660px )
+      .menu-icon
+            display: none
+      .menu-content
+            @include itemsPlacement(column, center, center)
+            .menu-bar
+                  width: 100%
+
+@media screen and ( max-width: 320px )
+      .menu-title
+            font-size: 20px !important
+      .menu-bar-title
+            font-size: 20px !important
+      .menu-bar-row-title
+            span
+                  font-size: 15px !important
+      .menu-bar-item-name
+            font-size: 13px !important
+      .menu-bar-item-price
+            .fa-usd
+                  font-size: 12px !important
+            font-size: 13px !important
+      
+      .menu-bar-item-desc
+            font-size: 7px !important
+
+// -------------------------------------------------------
+
+.footer
+      margin-top: 50px
+      background-color: $secondaryBgCol
+      width: 100%
+      @include itemsPlacement(row, space-between, center)
+      height: 80px
+      padding-right: 25px
+      padding-left: 25px
+.footer-icon
+      width: 70px
+      height: 70px
+      overflow: 
+      img
+            height: 100%
+            object-fit: contain
+
+.footer-title
+      font-family: $fontMontserrat
+      font-weight: 400
+      color: white
+      font-size: 15px
+      text-align: center
+
+@media screen and ( max-width: 640px )
+      .footer
+            @include itemsPlacement(row, center, center)
+            
+      .footer-icon
+            display: none
+      .footer-title
+            @include itemsPlacement(column, center, center)
+
+@media screen and ( max-width: 320px )
+      .footer-title
+            font-size: 11px
+      
+            
+      
+
+      
+
+            
+            
+
+
+      
+                                                            
+                                                                  
+                                                      
+                                                
+                                          
+                                          
+                                    
+                                     
+                                    
+
+                  
+            
+                  
+
+            
+      
+      
+            
+                        
+      
+      
+

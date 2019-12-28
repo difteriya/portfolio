@@ -1,0 +1,321 @@
+* {
+      box-sizing: border-box;
+}
+
+body {
+      background-image: url('../img/background.png');
+      padding: 0;
+      margin: 0;
+      margin-bottom: 40px;
+}
+
+.container {
+      max-width: 1200px;
+      margin: 0 auto;
+}
+
+.header {
+      max-height: 53px;
+      height: 53px;
+      background-color: rgba(0, 0, 0, 0.5);
+      max-width: 100%;
+      margin-bottom: 65px;
+}
+
+.name {
+      display: inline-block;
+      margin-left: 80px;
+      color: white;
+      margin-top: 20;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      font-size: 20px;
+      
+}
+
+.name-J {
+      font-size: 25px;
+      /* transform: translateY(10px); */
+}
+
+.header-menu-icons {
+      display: flex;
+      margin-top: 16px;
+      transform: translateX(23px);
+}
+
+.header-menu-icon {
+      width: 21px;
+      height: 20px;
+      margin-left: 22px;
+}
+
+
+
+.header-menu {
+      display: flex;
+      float: right;
+      margin-right: 75px;
+}
+
+.header-menu-welcome {
+      color: white;
+      display: inline-block;
+      margin-left: 24px;
+      margin-top: 14px;
+}
+
+.header-menu-welcome:before {
+      content: '';     
+      display: inline-block; 
+      width: 1px;
+      height: 19px;
+      background-color: #302f2e;
+      margin-left: 24px;
+      margin-right: 16px;
+      transform: translateY(3px);
+      /* margin-top: 16px; */
+}
+
+.inside-link a {
+      text-decoration: none;
+      color: #3cb878;
+}
+
+.clear-button {
+      max-width: 327px;
+      width: 200px;
+      height: 45px;
+      border: 2px solid #3cb878;
+      border-radius: 3px;
+      margin: 25px calc((100% / 2) - 100px);
+      background-color: #3cb878;
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+}
+
+.form-section {
+      max-width: 440px;
+      display: block;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 10px;
+}
+
+.sign-up-form {
+      max-width: 440px;
+      text-align: center;
+}
+
+.sign-up-form-headline {
+      display: flex;
+}
+
+.secondary-h {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 20px;
+      margin-left: 42px;
+      margin-right: 220px;
+}
+
+.secondary-h:before {
+      content: '';     
+      display: inline-block; 
+      width: 14px;
+      height:  14px;
+      background-color: #3cb878;
+      transform: translateX(-42px);
+}
+
+.additional {
+      display: block;
+      margin-top: 24px;
+}
+
+.additional a {
+      text-decoration: none;
+      color: #3cb878;
+}
+
+
+
+.sign-up-form-button-area {
+      display: flex;
+      margin-top: 15px;
+      margin-left: 41px;
+      margin-bottom: 20px;
+}
+
+.btn {
+      max-width: 156px;
+      max-height: 45px;
+      width: 156px;
+      height: 45px;
+      border-radius: 3px;
+      margin-left: 15px;
+      cursor: pointer;
+      transition: all .4s ease-out;
+      overflow: hidden;
+}
+
+.btn:hover {
+      border-color: white;
+}
+
+.facebook {
+       background-color: #305db8;
+       border: 2px solid #305db8;
+}
+
+.google {
+      background-color: #df4a32;
+      border: 2px solid #df4a32;
+}
+
+.f-icon {
+      width: auto;
+      height: 24px;
+      transform: translateY(7px);
+      transform: translateX(-10px); 
+}
+
+.g-icon {
+      width: auto;
+      height: 20px;
+      transform: translateY(7px);
+      transform: translateX(-10px);
+}
+
+.btn-title {
+      display: inline-block;
+      color: white;
+      font-weight: normal;
+      transform: translateY(-4px);
+      font-size: 16px;
+}
+
+.btn-title::before {
+      content: '';     
+      display: inline-block; 
+      width: 1px;
+      height: 23px;
+      background-color: #2b54a5;
+      margin-right: 15px;
+      transform: translateY(5px);
+}
+
+.google::before {
+      background-color: #c8422d;
+      transform: translateY(6px);
+}
+
+.sign-form-or-part {
+      position: relative;
+      text-align: center;
+}
+
+.text-or {
+      font-size: 16px;
+      color: #848484;
+      display: inline-block;
+      margin-bottom: 17px;
+}
+
+.text-or::before {
+      content: '';
+      display: inline-block;
+      height: 2px;
+      width: 140px;
+      background-color: #eaeaea;
+      /* transform: translateY(-2px);
+      transform: translateX(-17px); */
+      transform: translate(-17px, -3px);
+      
+}
+
+.text-or::after {
+      content: '';
+      display: inline-block;
+      height: 2px;
+      width: 140px;
+      background-color: #eaeaea;
+      transform: translate(17px, -3px);
+}
+
+.form-input {
+      max-width: 327px;
+      width: 327px;
+      margin-bottom: 18px;
+      max-height: 46px;
+      height: 46px;
+      border: 1px solid #eaeaea;
+      border-radius: 4px;
+      padding: 13px 15px;
+}
+
+.form-input:focus {
+      box-shadow: 0 2px 10px -5px #888888;
+      outline: none;
+}
+
+.checkbox-label {
+      display: block;
+      max-width: 327px;
+      margin: 0 auto;
+}
+
+.checkbox-label input {
+      display: none;
+}
+
+.checkbox-label span.agreement {
+      font-size: 16px;
+      cursor: pointer;
+      user-select: none;
+      margin-right: 95px;
+}
+
+.checkbox-label span.agreement::before {
+      content: '';
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #eaeaea;
+      vertical-align: middle;
+      margin-right: 10px;
+      transition: all 0.5s ease-in-out;
+      transform: translateY(-2px);
+      background-color: white !important;
+      background-image: url('../img/check-icon.png');
+      background-size: contain;
+      background-blend-mode: color;
+}
+
+.checkbox-label input:checked + span.agreement::before {
+      background-blend-mode: normal;
+}
+
+.create-btn {
+      max-width: 327px;
+      width: 327px;
+      height: 45px;
+      border: 2px solid #3cb878;
+      border-radius: 3px;
+      margin: 18px auto;
+      background-color: #3cb878;
+      transition: all .3s ease-out;
+      cursor: pointer;
+}
+
+.create-btn:hover {
+      border-color: white;
+}
+
+.create-btn-title {
+      color: white;
+      font-size: 17px;
+      transform: translateY(2px);
+}
