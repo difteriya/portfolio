@@ -1,0 +1,151 @@
+.features {
+  background-color: #f4f4f4;
+}
+
+.feature-title {
+  font-size: 32px;
+  font-family: $fontPrimary;
+  font-weight: 700;
+  color: #8d81ac;
+  line-height: 2.5rem;
+}
+
+.first-item{
+  img {
+    transform: translateX(15px);
+  }
+}
+
+.feature-item-title {
+  font-family: $fontPrimary;
+  font-weight: $fontRegular;
+  font-size: 16px;
+  color: #323232;
+}
+
+.feature-item-desc {
+  font-family: $fontSecondary;
+  font-weight: $fontRegular;
+  font-size: 14px;
+  color: #848e97;
+}
+
+.features-example-code {
+  width: 100%;
+  max-width: 480px;
+  height: 70vh;
+  overflow: hidden;
+  padding-left: 15px;
+  img {
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    box-shadow: 5px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+// For Screen Sizes -> md 
+
+@media (min-width : 481px) {
+  .feature-title {
+    font-size: 30px;
+  }
+
+  .feature-item-title {
+    font-size: 14px;
+  }
+
+  .feature-item-desc {
+    font-size: 12px;
+  }
+
+  .feature-item-icon {
+    transform: translateY(10px);
+  }
+
+  .features-example-code {
+    min-width: 481px;
+    max-width: 768px;
+    height: 100vh;
+    padding-left: 25px;
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}
+
+@media (min-width : 768px) {
+  .feature-title {
+    font-size: 42px;
+  }
+
+  .first-item {
+    transform: translateY(-5px);
+  }
+
+  .features-example-code {
+    min-width: 769px;
+    max-width: 992px;
+    height: 100vh;
+    padding-left: 25px;
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}
+
+
+// For Screen Sizes -> lg 
+
+@media (min-width : 993px) {
+  .features-container {
+    width: 50%;
+    min-width: 497px;
+    padding-right: 20px;
+    padding-left: 30px;
+  }
+
+  .features-example-code {
+    min-width: 497px;
+    height: 60vh;
+    padding-left: 30px;
+    transform: translateY(60px);
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: left;
+    }
+  }
+
+  .features {
+    position: relative;
+  }
+
+  .feature-title {
+    font-size: 35px;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+  }
+}
+
+
+@media (min-width : 1200px) {
+  .features-example-code {
+    height: 470px;
+    img {
+      object-position: top;
+    }
+  }
+
+  .feature-title {
+    font-size: 42px;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+  }
+}

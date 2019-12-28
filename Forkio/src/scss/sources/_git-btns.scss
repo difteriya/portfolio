@@ -1,0 +1,89 @@
+.github-buttons-header {
+  font-size: 27px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: #635c73;
+}
+
+.github-buttons-text {
+  font-size: 16px;
+  color: #848484;
+  font-family: "Lato";
+  font-weight: 400;
+}
+
+
+.github-btn {
+  background-color: #fcfcfc;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Montserrat";
+  transition: all .2s ease-in;
+  cursor: pointer;
+  .git-icon {
+    font-size: 17px;
+  }
+}
+
+
+.title {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+ 
+  &:hover {
+    border-color: gray;
+  }
+}
+
+.counter {
+  background-color: #fff;
+  height: 100%;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  
+  &:hover {
+    color: blue;
+  }
+}
+
+// For Screen sizes -> md 
+@media (min-width : 481px) {
+  .github-btn {
+    height: 24px;
+    font-size: 11px;
+    .git-icon {
+      font-size: 14px;
+    }
+  }
+
+  .title {
+    width: 80px;
+  }
+
+  .counter {
+    width: 44px;
+  }
+
+  .github-buttons-header {
+    font-size: 42px;
+  }
+
+  .github-buttons-text {
+    font-size: 21px;
+  }
+}
+
+
+// For For Screen sizes -> xl
+
+@media (min-width : 1200px) {
+  .col-md2-2 {
+    max-width: 150px !important;
+  }
+
+  .github-buttons-header {
+    font-size: 54px;
+  }
+}

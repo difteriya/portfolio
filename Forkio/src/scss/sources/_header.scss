@@ -1,0 +1,283 @@
+$purple: #8d81ac;
+$fontMontserrat: 'Montserrat', sans-serif;
+
+.header-section{
+  background-image: url("../img/header-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  min-width: 320px;
+}
+.main-header {
+  background-color: #27262a;
+  padding: 20px 0;
+  color: $purple;
+}
+.container{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+.header-logo{
+  color: $purple;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all .3s ease;
+  font-family: $fontMontserrat;
+  img {
+    display: inline-block;
+    width: 40px;
+    margin-right: 10px;
+    transition: all .3s ease;
+  }
+  span {
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+  &:hover {
+    text-decoration: none;
+    color: white;
+    img {
+      filter: brightness(200%)
+    }
+  }
+}
+
+
+
+.main-header--nav-link {
+  display: inline-block;
+  color: $purple;
+  font-family: $fontMontserrat;
+  font-weight: bold;
+  font-size: 15px;
+  transition: all .3s ease;
+  &:not(:first-child) {
+    margin-left: 25px;
+  }
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+
+.def-btn {
+  display: inline-block;
+  min-width: 150px;
+  padding: 13px;
+  text-align: center;
+  background-color: $purple;
+  color: white;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: $fontMontserrat;
+  border-radius: 20px;
+  border: none;
+  transition: all .3s ease;
+  &:hover{
+    background-color: #fff;
+    color: $purple;
+    text-decoration: none;
+  }
+}
+.header-text-top{
+  font-size: 82px;
+  font-family: $fontMontserrat;
+  font-weight: bold;
+  margin-top: 60px;
+  color: white;
+}
+
+.header-text-bottom{
+  margin-bottom: 350px;
+  h1:first-child{
+    color: $purple;
+    font-size: 30px;
+    font-family: $fontMontserrat;
+    margin: 15px auto;
+  }
+  h1:last-child{
+    font-size: 16px;
+    font-family: $fontMontserrat;
+    color: #737b84;
+  }
+}
+
+
+.download-btn{
+  border-radius: 40px;
+  bottom: 0;
+  background-color: $purple;
+  color: white;
+  transform: translateY(50%);
+  padding: 5px 30px;
+  font-size: 21px;
+  font-weight: bold;
+  &:hover {
+    color: $purple;
+    background-color: #fff;
+    border-color: $purple;
+  }
+}
+
+.download-info{
+  margin-top: 30px;
+  font-size: 14px;
+  color: #848e97;
+}
+
+
+
+
+
+@media (max-width: 992px){
+  .header-text-top{
+
+    font-size: 72px;
+    margin-top: 50px;
+  }
+
+  .header-text-bottom{
+    margin-bottom: 360px;
+    h1:first-child{
+      font-size: 24px;
+      margin: 20px auto;
+    }
+    h1:last-child{
+      font-size: 14px;
+    }
+  }
+}
+
+
+
+
+
+@media (max-width: 480px) {
+
+  .container{
+    min-width: 320px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .burger-btn {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    width: 32px;
+    height: 28px;
+    position: relative;
+
+    &:before, &:after,
+    span:before, span:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background-color: #fff;
+      border-radius: 3px;
+      left: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    &:before {
+      width: 70%;
+      left: 30%;
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+
+    span:before, span:after {
+      top: 50%;
+      margin-top: -2px;
+    }
+  }
+
+
+
+
+
+  .main-header {
+    position: relative;
+
+  }
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    width: calc(100% - 30px);
+    background-color: #333333;
+    z-index: -1;
+    opacity: 0;
+    transition: all 1s ease;
+    transform: translateY(-100%);
+    &.active {
+      transform: translateY(0);
+      z-index: 0;
+      opacity: 1;
+    }
+  }
+
+  .main-header--nav-link {
+    display: block;
+    width: 100%;
+    padding: 14px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    font-weight: 400;
+    position: relative;
+    color: white;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 60%;
+      top: 20%;
+      left: 0;
+      transition: all .3s ease;
+      opacity: 0;
+      background-color: $purple;
+    }
+    &:not(:first-child) {
+      margin: 0;
+    }
+    &:hover {
+      color: $purple;
+
+      &::before {
+        opacity: 1
+      }
+    }
+  }
+
+
+
+  .header-text-top{
+    font-size: 48px;
+    margin-top: 30px;
+  }
+
+  .header-text-bottom{
+    margin-bottom: 250px;
+    h1:first-child{
+      font-size: 18px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    h1:last-child{
+      line-height: 2;
+    }
+  }
+
+  .download-btn{
+    font-size: 18px;
+  }
+}

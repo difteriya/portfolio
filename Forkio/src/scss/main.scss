@@ -1,0 +1,60 @@
+@import 'libs/reset.scss';
+@import 'libs/bootstrap/functions';
+@import 'libs/bootstrap/variables';
+
+$grid-breakpoints: (
+      xs: 0,
+      sm: 320px,
+      md: 481px,
+      md2: 768px,
+      lg: 993px,
+      xl: 1200px
+);
+
+$container-max-widths: (
+      sm: 300px,
+      md: 450px,
+      md2: 718px,
+      lg: 960px,
+      xl: 1140px
+);
+
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 2),
+    6: ($spacer * 2.5),
+    7: ($spacer * 3),
+    8: ($spacer * 3.5),
+    9: ($spacer * 4.5),
+    10: ($spacer * 5)
+  ),
+  $spacers
+);
+
+$fontPrimary : "Montserrat";
+$fontSecondary : "Lato";
+
+$fontLight: 300;
+$fontRegular : 400;
+$fontMedium : 500;
+$fontSemiBold : 600;
+$fontBold : 700;
+
+@import 'libs/bootstrap/bootstrap.scss';
+
+// ------------------------------------------
+
+
+
+@import './sources/header';
+@import './sources/features';
+@import './sources/git-btns';
+@import './sources/people_about_fork';
+@import './sources/cards';
+
+
